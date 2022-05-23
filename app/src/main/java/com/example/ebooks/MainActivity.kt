@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindings = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(bindings.root)
 
 
         loadFragment(Home_Fragment())

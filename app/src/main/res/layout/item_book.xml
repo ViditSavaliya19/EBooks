@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:id="@+id/book_poster_img"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_launcher_background" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:max="5"
+        android:numStars="5"
+        android:rating="3.5"
+        android:transformPivotX="0dp"
+        android:transformPivotY="20dp"
+        android:scaleX=".5"
+        android:scaleY=".5"/>
+
+</LinearLayout>
