@@ -1,5 +1,6 @@
 package com.example.ebooks.Screen.Home_Fragment.controller
 
+import android.content.Intent
 import android.media.Image
 import android.media.Rating
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ebooks.R
 import com.example.ebooks.Screen.Home_Fragment.model.BookModel
+import com.example.ebooks.Screen.ReadBooK_Screen.view.ReadBook_Activity
 import org.imaginativeworld.whynotimagecarousel.utils.setImage
 
 class Rv_h_Adapter(val activity: FragmentActivity?, val topTrendingList: ArrayList<BookModel>) :
@@ -32,6 +34,13 @@ class Rv_h_Adapter(val activity: FragmentActivity?, val topTrendingList: ArrayLi
     override fun onBindViewHolder(holder: ViewData, position: Int) {
         Glide.with(activity!!).load(topTrendingList[position].img).into(holder.image_poster)
         holder.rating.rating = topTrendingList[position].rate.toFloat()
+
+        holder.image_poster.setOnClickListener {
+            var intent = Intent(activity,ReadBook_Activity::class.java)
+            intent.putExtra("link",topTrendingList[position].pdf)
+            activity.startActivity(intent)
+        }
+
     }
 
     override fun getItemCount(): Int {

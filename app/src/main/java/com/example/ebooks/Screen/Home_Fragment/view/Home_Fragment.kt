@@ -60,4 +60,9 @@ class Home_Fragment : Fragment() {
         recycerViewSetup()
 
     }
+
+    override fun onResume() {
+        super.onResume()
+        recycerViewSetup()
+    }
 }
